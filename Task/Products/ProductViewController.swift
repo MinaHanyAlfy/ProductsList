@@ -7,35 +7,44 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
+
+protocol ProductView: AnyObject {
+    func ProductsSuccess(products: Products)
+}
+
+public class ProductViewController: UIViewController,ProductView {
+   
 
     @IBOutlet weak var collectionView: UICollectionView!
-    override func viewDidLoad() {
+    private var viewModel: ProductViewModelProtocol!
+    private var data: Products?
+    public override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title = "Products List"
         navigationTitle()
         collectionView.delegate = self
         collectionView.dataSource = self
         registerCell()
-        
+        viewModel = ProductViewModel(view: self)
+        //CheckInternetCollection To fetchData and Save coreData
+        viewModel.productsResult()
     }
 
    
 }
 extension ProductViewController: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
         
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data?.count ?? 0
     }
     
     
 }
 
-//Extension Functions 
+//Extension Functions
 extension ProductViewController{
     private func navigationTitle(){
         if let navigationBar = self.navigationController?.navigationBar {
@@ -53,5 +62,9 @@ extension ProductViewController{
     private func registerCell(){
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
     }
-
+    func ProductsSuccess(products: Products) {
+        self.data = products
+    }
+    
+  
 }
