@@ -16,7 +16,7 @@ extension API: EndPoint{
         return "http://myjson.dit.upm.es"
     }
     var urlSubFolder: String {
-        return "/api/"
+        return "/api"
     }
     
     

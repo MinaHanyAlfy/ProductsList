@@ -14,7 +14,7 @@ protocol ProductView: AnyObject {
 
 public class ProductViewController: UIViewController,ProductView {
    
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel: ProductViewModelProtocol!
     private var data: Products?
@@ -25,7 +25,10 @@ public class ProductViewController: UIViewController,ProductView {
         collectionView.dataSource = self
         registerCell()
         viewModel = ProductViewModel(view: self)
-        //CheckInternetCollection To fetchData and Save coreData
+        if let layout = collectionView?.collectionViewLayout as? ProductLayout {
+          layout.delegate = self
+            
+        }
         viewModel.productsResult()
     }
 
@@ -34,13 +37,13 @@ public class ProductViewController: UIViewController,ProductView {
 extension ProductViewController: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
-        
+        cell.handleCell(product: (data?[indexPath.row])!)
+        cell.widthCells = (collectionView.width-36) / 2.0
         return cell
     }
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data?.count ?? 0
     }
-    
     
 }
 
@@ -64,7 +67,31 @@ extension ProductViewController{
     }
     func ProductsSuccess(products: Products) {
         self.data = products
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            self.collectionView.layoutIfNeeded()
+        }
+        
+
     }
     
   
+}
+extension ProductViewController: ProductLayoutDelegate {
+  func collectionView(
+      _ collectionView: UICollectionView,
+      heightForContentAtIndexPath indexPath:IndexPath) -> CGFloat {
+          var heightLabel = 0.0
+          let heightImage = data?[indexPath.row].image?.height ?? 0
+          guard let string = data?[indexPath.row].productDescription else {return 0}
+          heightLabel = UILabel.textHeight(withWidth: 150, font: UIFont.systemFont(ofSize: 17), text:  string)
+        
+          let heightPrice = 24
+          let heightSpaces = 22
+          let heightMarginSpace = 8
+          let totalHeight = CGFloat(heightImage+Int(heightLabel)+heightSpaces+heightMarginSpace+heightPrice)
+          
+          return totalHeight
+  }
+    
 }

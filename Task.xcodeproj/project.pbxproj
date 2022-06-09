@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FC593152852070D0044E24A /* ProductLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC593142852070D0044E24A /* ProductLayout.swift */; };
+		7FC59317285226390044E24A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC59316285226390044E24A /* UILabel+Extension.swift */; };
 		7FF2240228508C49004808FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240128508C49004808FA /* AppDelegate.swift */; };
 		7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240328508C49004808FA /* SceneDelegate.swift */; };
 		7FF2240928508C49004808FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2240728508C49004808FA /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		7FF2244728509939004808FA /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2244528509939004808FA /* ProductCollectionViewCell.xib */; };
 		7FF2244B2850AC4E004808FA /* ZeroStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2244A2850AC4E004808FA /* ZeroStateViewController.swift */; };
 		7FF2244D2850AC5C004808FA /* ZeroStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2244C2850AC5C004808FA /* ZeroStateViewModel.swift */; };
+		7FF224512850B300004808FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF224502850B300004808FA /* UIView+Extensions.swift */; };
+		7FF224562850D465004808FA /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF224552850D465004808FA /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7FC593142852070D0044E24A /* ProductLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLayout.swift; sourceTree = "<group>"; };
+		7FC59316285226390044E24A /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		7FF223FE28508C49004808FA /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF2240128508C49004808FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF2240328508C49004808FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,8 @@
 		7FF2244528509939004808FA /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		7FF2244A2850AC4E004808FA /* ZeroStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateViewController.swift; sourceTree = "<group>"; };
 		7FF2244C2850AC5C004808FA /* ZeroStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateViewModel.swift; sourceTree = "<group>"; };
+		7FF224502850B300004808FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7FF224552850D465004808FA /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FC59313285206D70044E24A /* ProductCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				7FC593142852070D0044E24A /* ProductLayout.swift */,
+			);
+			path = ProductCollectionViewLayout;
+			sourceTree = "<group>";
+		};
 		7FF223F528508C49004808FA = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +137,7 @@
 		7FF2240028508C49004808FA /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				7FF224522850B30B004808FA /* Extension */,
 				7FF224492850AC32004808FA /* ZeroState */,
 				7FF224342850915E004808FA /* Products */,
 				7FF2240328508C49004808FA /* SceneDelegate.swift */,
@@ -155,6 +172,7 @@
 		7FF224342850915E004808FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				7FC59313285206D70044E24A /* ProductCollectionViewLayout */,
 				7FF2243528509176004808FA /* ProductModel.swift */,
 				7FF2243728509186004808FA /* ProductViewModel.swift */,
 				7FF22439285091AA004808FA /* ProductViewController.swift */,
@@ -190,6 +208,16 @@
 				7FF2244C2850AC5C004808FA /* ZeroStateViewModel.swift */,
 			);
 			path = ZeroState;
+			sourceTree = "<group>";
+		};
+		7FF224522850B30B004808FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7FF224502850B300004808FA /* UIView+Extensions.swift */,
+				7FF224552850D465004808FA /* UIImage+Extension.swift */,
+				7FC59316285226390044E24A /* UILabel+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,17 +352,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC59317285226390044E24A /* UILabel+Extension.swift in Sources */,
+				7FF224512850B300004808FA /* UIView+Extensions.swift in Sources */,
 				7FF2244B2850AC4E004808FA /* ZeroStateViewController.swift in Sources */,
 				7FF224422850956F004808FA /* API.swift in Sources */,
 				7FF2244D2850AC5C004808FA /* ZeroStateViewModel.swift in Sources */,
 				7FF2240C28508C49004808FA /* Task.xcdatamodeld in Sources */,
 				7FF2244628509939004808FA /* ProductCollectionViewCell.swift in Sources */,
+				7FC593152852070D0044E24A /* ProductLayout.swift in Sources */,
 				7FF2244028509564004808FA /* ErrorMessage.swift in Sources */,
 				7FF2243C2850954C004808FA /* EndPoint.swift in Sources */,
 				7FF2243828509186004808FA /* ProductViewModel.swift in Sources */,
 				7FF2243A285091AA004808FA /* ProductViewController.swift in Sources */,
 				7FF2243E2850955A004808FA /* Network.swift in Sources */,
 				7FF2240228508C49004808FA /* AppDelegate.swift in Sources */,
+				7FF224562850D465004808FA /* UIImage+Extension.swift in Sources */,
 				7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */,
 				7FF2243628509176004808FA /* ProductModel.swift in Sources */,
 			);
