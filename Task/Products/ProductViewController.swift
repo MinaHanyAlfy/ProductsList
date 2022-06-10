@@ -20,7 +20,8 @@ public class ProductViewController: UIViewController,ProductView {
     private var data: Products?
     public override func viewDidLoad() {
         super.viewDidLoad()
-        navigationTitle()
+        navigationItem.title = "Products List"
+        navigationController?.navigationBar.prefersLargeTitles = true
         collectionView.delegate = self
         collectionView.dataSource = self
         registerCell()
@@ -44,27 +45,28 @@ extension ProductViewController: UICollectionViewDataSource,UICollectionViewDele
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data?.count ?? 0
     }
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "productDesciption", sender: indexPath.row)
+    }
     
 }
 
 //Extension Functions
 extension ProductViewController{
-    private func navigationTitle(){
-        if let navigationBar = self.navigationController?.navigationBar {
-
-                   let frame = CGRect(x: navigationBar.center.x-(navigationBar.center.x/3), y: 0, width: navigationBar.frame.width/2, height: navigationBar.frame.height)
-                   let myMutableString = NSMutableAttributedString(string: "Products List", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)])
-                   myMutableString.setAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24),
-                                                          NSAttributedString.Key.foregroundColor: UIColor.black],
-                                                         range: NSMakeRange(0, 13))
-                   let lbl = UILabel(frame: frame)
-                   lbl.attributedText = myMutableString
-                   navigationBar.addSubview(lbl)
-         }
-    }
+    
     private func registerCell(){
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
     }
+    
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let product = data?[sender as? Int ?? 0]  else{return}
+        if segue.identifier == "productDesciption"{
+            let descVc = segue.destination as! ProductDetailsViewController
+            descVc.product = product
+            
+        }
+    }
+    
     func ProductsSuccess(products: Products) {
         self.data = products
         DispatchQueue.main.async {

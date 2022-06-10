@@ -35,11 +35,52 @@
                     <navigationItem key="navigationItem" id="NhS-dJ-ozd"/>
                     <connections>
                         <outlet property="collectionView" destination="bjC-v3-2Ao" id="DPQ-hV-e0n"/>
+                        <segue destination="tyB-br-NwH" kind="show" identifier="productDesciption" id="kYl-Rq-Ril"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+            <point key="canvasLocation" x="1090" y="82"/>
+        </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="1nT-Qx-8Ea">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailsVc" id="tyB-br-NwH" customClass="ProductDetailsViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BN5-45-kE2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-pM-l3h">
+                                <rect key="frame" x="152.5" y="88" width="109" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tej-fE-tsq">
+                                <rect key="frame" x="163.5" y="146" width="87.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HfZ-G7-m7N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BKn-pM-l3h" firstAttribute="centerX" secondItem="HfZ-G7-m7N" secondAttribute="centerX" id="9Uq-lb-LZA"/>
+                            <constraint firstItem="tej-fE-tsq" firstAttribute="width" secondItem="BKn-pM-l3h" secondAttribute="width" multiplier="0.8" id="AUR-EL-Rmq"/>
+                            <constraint firstItem="BKn-pM-l3h" firstAttribute="height" relation="lessThanOrEqual" secondItem="BN5-45-kE2" secondAttribute="height" multiplier="0.6" id="DWG-1E-785"/>
+                            <constraint firstItem="BKn-pM-l3h" firstAttribute="top" secondItem="HfZ-G7-m7N" secondAttribute="top" id="Gc1-4N-Szk"/>
+                            <constraint firstItem="tej-fE-tsq" firstAttribute="top" secondItem="BKn-pM-l3h" secondAttribute="bottom" constant="8" id="OMl-Hu-r6g"/>
+                            <constraint firstItem="BKn-pM-l3h" firstAttribute="width" relation="lessThanOrEqual" secondItem="BN5-45-kE2" secondAttribute="width" id="TGf-uZ-vIc"/>
+                            <constraint firstItem="tej-fE-tsq" firstAttribute="centerX" secondItem="BKn-pM-l3h" secondAttribute="centerX" id="fF5-ry-8Ef"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="x1z-oF-gEO"/>
+                    <connections>
+                        <outlet property="descLabel" destination="tej-fE-tsq" id="Taa-te-L1f"/>
+                        <outlet property="productImageView" destination="BKn-pM-l3h" id="YUT-XY-TZU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDm-HN-GJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.9420289855075" y="82.366071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sJB-0p-R3T">
@@ -61,6 +102,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
