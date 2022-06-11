@@ -128,7 +128,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "productsResult(indexPath:)"
+            landmarkName = "productsResult()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -144,7 +144,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "productsResult(indexPath:)"
+            landmarkName = "productsResult()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
