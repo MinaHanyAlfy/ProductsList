@@ -11,7 +11,6 @@
 		7FAF74CA285357EA0006B489 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF74C9285357EA0006B489 /* ProductDetailsViewController.swift */; };
 		7FC593152852070D0044E24A /* ProductLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC593142852070D0044E24A /* ProductLayout.swift */; };
 		7FC59317285226390044E24A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC59316285226390044E24A /* UILabel+Extension.swift */; };
-		7FD7F7AA2854ADF6002E0B17 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7F7A92854ADF6002E0B17 /* NetworkHandler.swift */; };
 		7FF2240228508C49004808FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240128508C49004808FA /* AppDelegate.swift */; };
 		7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240328508C49004808FA /* SceneDelegate.swift */; };
 		7FF2240928508C49004808FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2240728508C49004808FA /* Main.storyboard */; };
@@ -63,7 +62,6 @@
 		7FAF74C9285357EA0006B489 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		7FC593142852070D0044E24A /* ProductLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLayout.swift; sourceTree = "<group>"; };
 		7FC59316285226390044E24A /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		7FD7F7A92854ADF6002E0B17 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		7FF223FE28508C49004808FA /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF2240128508C49004808FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF2240328508C49004808FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				7FF2243D2850955A004808FA /* Network.swift */,
 				7FF2243F28509564004808FA /* ErrorMessage.swift */,
 				7FF224412850956F004808FA /* API.swift */,
-				7FD7F7A92854ADF6002E0B17 /* NetworkHandler.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -409,7 +406,6 @@
 				7FF904DA285384D7007A576A /* ImageCD+CoreDataProperties.swift in Sources */,
 				7FF904E028538566007A576A /* CoreDataManager.swift in Sources */,
 				7FF904DB285384D7007A576A /* ProductCD+CoreDataClass.swift in Sources */,
-				7FD7F7AA2854ADF6002E0B17 /* NetworkHandler.swift in Sources */,
 				7FAF74CA285357EA0006B489 /* ProductDetailsViewController.swift in Sources */,
 				7FF2240C28508C49004808FA /* Task.xcdatamodeld in Sources */,
 				7FF2244628509939004808FA /* ProductCollectionViewCell.swift in Sources */,

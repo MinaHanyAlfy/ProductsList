@@ -6,18 +6,28 @@
 //
 
 import UIKit
-
+import Network
 
 protocol ProductView: AnyObject {
     func ProductsSuccess(products: Products)
 }
 
 public class ProductViewController: UIViewController,ProductView {
-   
+    
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue(label: "InternetConnectionMonitor")
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel: ProductViewModelProtocol!
-    private var data: Products?
+    private var data: Products?{
+        didSet{
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    let coreDataManager = CoreDataManager.shared
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Products List"
@@ -30,9 +40,9 @@ public class ProductViewController: UIViewController,ProductView {
           layout.delegate = self
             
         }
-        viewModel.productsResult()
-//        CoreDataMana
-        print(CoreDataManager.shared.getProducts())
+       
+        checkConnection()
+      
         
        
     }
@@ -78,6 +88,23 @@ extension ProductViewController{
         
 
     }
+    private func checkConnection(){
+        monitor.pathUpdateHandler = { pathUpdateHandler in
+                if pathUpdateHandler.status == .satisfied {
+                    print("Internet connection is on.")
+                    self.viewModel.productsResult()
+
+                } else {
+                    print("There's no internet connection.")
+                    if self.coreDataManager.countProducts() > 0{
+                        self.data = self.coreDataManager.getProducts()
+                    }
+                }
+            }
+            monitor.start(queue: queue)
+        
+    }
+
     
   
 }
