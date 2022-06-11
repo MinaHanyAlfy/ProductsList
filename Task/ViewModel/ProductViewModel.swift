@@ -19,7 +19,7 @@ public class ProductViewModel: ProductViewModelProtocol {
                 CoreDataManager.shared.saveProducts(products: self.products ?? [])
                 self.view.ProductsSuccess(products: self.products ?? [])
             }
-            }
+        }
            
     }
     weak private var view: ProductView!

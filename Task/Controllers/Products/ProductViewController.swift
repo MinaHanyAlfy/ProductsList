@@ -13,17 +13,17 @@ protocol ProductView: AnyObject {
 }
 
 public class ProductViewController: UIViewController,ProductView {
-    
-    let monitor = NWPathMonitor()
-    let queue = DispatchQueue(label: "InternetConnectionMonitor")
+    let networkHandler = NetworkHandler.shared
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel: ProductViewModelProtocol!
     private var data: Products?{
         didSet{
             DispatchQueue.main.async {
-        self.collectionView.reloadData()
-
+                self.collectionView.reloadData()
+                self.collectionView.collectionViewLayout.invalidateLayout()
+                self.collectionView.layoutSubviews()
             }
         }
     }
@@ -38,11 +38,11 @@ public class ProductViewController: UIViewController,ProductView {
         registerCell()
         viewModel = ProductViewModel(view: self)
         if let layout = collectionView?.collectionViewLayout as? ProductLayout {
-          layout.delegate = self
+            layout.delegate = self
             
         }
         checkConnection()
- 
+        
     }
 }
 
@@ -95,7 +95,7 @@ extension ProductViewController{
     }
     
     func ProductsSuccess(products: Products) {
-       
+        
         DispatchQueue.main.async {
             self.data = products
             self.collectionView.reloadData()
@@ -104,56 +104,56 @@ extension ProductViewController{
             self.collectionView.layoutIfNeeded()
         }
         
-
-    }
-    private func checkConnection(){
-        monitor.pathUpdateHandler = { pathUpdateHandler in
-                if pathUpdateHandler.status == .satisfied {
-                    print("Internet connection is on.")
-                    self.viewModel.productsResult()
-                } else {
-                    print("There's no internet connection.")
-                    if self.coreDataManager.countProducts() > 0{
-                        self.data = self.coreDataManager.getProducts()
-                    }else{
-                        self.noProductsViewLayout()
-                    }
-                        
-                }
-            }
-            monitor.start(queue: queue)
         
     }
-
+    private func checkConnection(){
+        
+        if networkHandler.isConnected {
+            self.viewModel.productsResult()
+            self.collectionView.isHidden = false
+        }else{
+            if self.coreDataManager.countProducts() > 0{
+                self.data = self.coreDataManager.getProducts()
+                self.collectionView.isHidden = false
+            }else{
+                self.noProductsViewLayout()
+            }
+        }
+        
+     
+        
+    }
+    
     private func noProductsViewLayout(){
         DispatchQueue.main.async {[self] in
+            print("No Layout")
             collectionView.isHidden = true
             let noProudctView = ZeroStateView(frame: CGRect(x: 0, y: 0, width: view.width/2, height: view.width/2))
             noProudctView.center = view.center
             view.addSubview(noProudctView)
         }
-         
+        
     }
     
     func moreProducts(){
         viewModel.productsResult()
     }
-
+    
 }
 extension ProductViewController: ProductLayoutDelegate {
-  func collectionView(
-      _ collectionView: UICollectionView,
-      heightForContentAtIndexPath indexPath:IndexPath) -> CGFloat {
-          let heightImage = data?[indexPath.row].image?.height ?? 0
-          guard let string = data?[indexPath.row].productDescription else {return 0}
-          
-          let heightLabel = UILabel.textHeight(withWidth: 150, font: UIFont.systemFont(ofSize: 17), text:  string)
-          let heightPrice = 24
-          let heightSpaces = 22
-          let heightMarginSpace = 8
-          let totalHeight = CGFloat(heightImage+Int(heightLabel)+heightSpaces+heightMarginSpace+heightPrice)
-          
-          return totalHeight
-  }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        heightForContentAtIndexPath indexPath:IndexPath) -> CGFloat {
+            let heightImage = data?[indexPath.row].image?.height ?? 0
+            guard let string = data?[indexPath.row].productDescription else {return 0}
+            
+            let heightLabel = UILabel.textHeight(withWidth: 150, font: UIFont.systemFont(ofSize: 17), text:  string)
+            let heightPrice = 24
+            let heightSpaces = 22
+            let heightMarginSpace = 8
+            let totalHeight = CGFloat(heightImage+Int(heightLabel)+heightSpaces+heightMarginSpace+heightPrice)
+            
+            return totalHeight
+        }
     
 }
