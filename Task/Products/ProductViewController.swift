@@ -93,19 +93,31 @@ extension ProductViewController{
                 if pathUpdateHandler.status == .satisfied {
                     print("Internet connection is on.")
                     self.viewModel.productsResult()
-
                 } else {
                     print("There's no internet connection.")
                     if self.coreDataManager.countProducts() > 0{
                         self.data = self.coreDataManager.getProducts()
+                    }else{
+                        self.noProductsViewLayout()
                     }
+                        
                 }
             }
             monitor.start(queue: queue)
         
     }
 
-    
+    private func noProductsViewLayout(){
+        DispatchQueue.main.async {[self] in
+            collectionView.isHidden = true
+            var noProudctView = ZeroStateView(frame: CGRect(x: 0, y: 0, width: view.width/2, height: view.width/2))
+            noProudctView.center = view.center
+            view.addSubview(noProudctView)
+        }
+         
+     
+
+       }
   
 }
 extension ProductViewController: ProductLayoutDelegate {
