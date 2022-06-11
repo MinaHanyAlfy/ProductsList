@@ -15,7 +15,11 @@
  Using 
  ==============
  1-Simple Network layer to fetch data.
+ 
  2-Simple Core Data layer to save , get And delete.
+ 
  3-Using Storyboard and UIKit.
+ 
  4-Using MVVM Design Pattern to make code able to use ,handle.
+ 
  5-Not using any third-party libraries.
