@@ -11,6 +11,7 @@
 		7FAF74CA285357EA0006B489 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF74C9285357EA0006B489 /* ProductDetailsViewController.swift */; };
 		7FC593152852070D0044E24A /* ProductLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC593142852070D0044E24A /* ProductLayout.swift */; };
 		7FC59317285226390044E24A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC59316285226390044E24A /* UILabel+Extension.swift */; };
+		7FD7F7AA2854ADF6002E0B17 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7F7A92854ADF6002E0B17 /* NetworkHandler.swift */; };
 		7FF2240228508C49004808FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240128508C49004808FA /* AppDelegate.swift */; };
 		7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240328508C49004808FA /* SceneDelegate.swift */; };
 		7FF2240928508C49004808FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2240728508C49004808FA /* Main.storyboard */; };
@@ -33,6 +34,11 @@
 		7FF2244D2850AC5C004808FA /* ZeroStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2244C2850AC5C004808FA /* ZeroStateViewModel.swift */; };
 		7FF224512850B300004808FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF224502850B300004808FA /* UIView+Extensions.swift */; };
 		7FF224562850D465004808FA /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF224552850D465004808FA /* UIImage+Extension.swift */; };
+		7FF904D9285384D7007A576A /* ImageCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D5285384D7007A576A /* ImageCD+CoreDataClass.swift */; };
+		7FF904DA285384D7007A576A /* ImageCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D6285384D7007A576A /* ImageCD+CoreDataProperties.swift */; };
+		7FF904DB285384D7007A576A /* ProductCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D7285384D7007A576A /* ProductCD+CoreDataClass.swift */; };
+		7FF904DC285384D7007A576A /* ProductCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D8285384D7007A576A /* ProductCD+CoreDataProperties.swift */; };
+		7FF904E028538566007A576A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904DF28538566007A576A /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,7 @@
 		7FAF74C9285357EA0006B489 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		7FC593142852070D0044E24A /* ProductLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLayout.swift; sourceTree = "<group>"; };
 		7FC59316285226390044E24A /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		7FD7F7A92854ADF6002E0B17 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		7FF223FE28508C49004808FA /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF2240128508C49004808FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF2240328508C49004808FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +90,11 @@
 		7FF2244C2850AC5C004808FA /* ZeroStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateViewModel.swift; sourceTree = "<group>"; };
 		7FF224502850B300004808FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7FF224552850D465004808FA /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		7FF904D5285384D7007A576A /* ImageCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ImageCD+CoreDataClass.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ImageCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		7FF904D6285384D7007A576A /* ImageCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ImageCD+CoreDataProperties.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ImageCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		7FF904D7285384D7007A576A /* ProductCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductCD+CoreDataClass.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ProductCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		7FF904D8285384D7007A576A /* ProductCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductCD+CoreDataProperties.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ProductCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		7FF904DF28538566007A576A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +162,7 @@
 		7FF2240028508C49004808FA /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				7FF904D428538413007A576A /* CoreDataLayer */,
 				7FAF74C62853576E0006B489 /* ProductDetails */,
 				7FF224522850B30B004808FA /* Extension */,
 				7FF224492850AC32004808FA /* ZeroState */,
@@ -202,6 +215,7 @@
 				7FF2243D2850955A004808FA /* Network.swift */,
 				7FF2243F28509564004808FA /* ErrorMessage.swift */,
 				7FF224412850956F004808FA /* API.swift */,
+				7FD7F7A92854ADF6002E0B17 /* NetworkHandler.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -232,6 +246,27 @@
 				7FC59316285226390044E24A /* UILabel+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7FF904D428538413007A576A /* CoreDataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				7FF904DD28538549007A576A /* Modules */,
+				7FF904DF28538566007A576A /* CoreDataManager.swift */,
+			);
+			name = CoreDataLayer;
+			path = ProductDetails/CoreDataLayer;
+			sourceTree = "<group>";
+		};
+		7FF904DD28538549007A576A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7FF904D5285384D7007A576A /* ImageCD+CoreDataClass.swift */,
+				7FF904D6285384D7007A576A /* ImageCD+CoreDataProperties.swift */,
+				7FF904D7285384D7007A576A /* ProductCD+CoreDataClass.swift */,
+				7FF904D8285384D7007A576A /* ProductCD+CoreDataProperties.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +406,10 @@
 				7FF2244B2850AC4E004808FA /* ZeroStateViewController.swift in Sources */,
 				7FF224422850956F004808FA /* API.swift in Sources */,
 				7FF2244D2850AC5C004808FA /* ZeroStateViewModel.swift in Sources */,
+				7FF904DA285384D7007A576A /* ImageCD+CoreDataProperties.swift in Sources */,
+				7FF904E028538566007A576A /* CoreDataManager.swift in Sources */,
+				7FF904DB285384D7007A576A /* ProductCD+CoreDataClass.swift in Sources */,
+				7FD7F7AA2854ADF6002E0B17 /* NetworkHandler.swift in Sources */,
 				7FAF74CA285357EA0006B489 /* ProductDetailsViewController.swift in Sources */,
 				7FF2240C28508C49004808FA /* Task.xcdatamodeld in Sources */,
 				7FF2244628509939004808FA /* ProductCollectionViewCell.swift in Sources */,
@@ -378,10 +417,12 @@
 				7FF2244028509564004808FA /* ErrorMessage.swift in Sources */,
 				7FF2243C2850954C004808FA /* EndPoint.swift in Sources */,
 				7FF2243828509186004808FA /* ProductViewModel.swift in Sources */,
+				7FF904D9285384D7007A576A /* ImageCD+CoreDataClass.swift in Sources */,
 				7FAF74C8285357C40006B489 /* ProductDetailsViewModel.swift in Sources */,
 				7FF2243A285091AA004808FA /* ProductViewController.swift in Sources */,
 				7FF2243E2850955A004808FA /* Network.swift in Sources */,
 				7FF2240228508C49004808FA /* AppDelegate.swift in Sources */,
+				7FF904DC285384D7007A576A /* ProductCD+CoreDataProperties.swift in Sources */,
 				7FF224562850D465004808FA /* UIImage+Extension.swift in Sources */,
 				7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */,
 				7FF2243628509176004808FA /* ProductModel.swift in Sources */,

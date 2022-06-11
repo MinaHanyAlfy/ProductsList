@@ -15,6 +15,9 @@ public class ProductViewModel: ProductViewModelProtocol {
  
     var products: Products?{
         didSet{
+            DispatchQueue.main.async {
+                CoreDataManager.shared.saveProducts(products: self.products ?? [])
+            }
             self.view.ProductsSuccess(products: products ?? [])
         }
     }

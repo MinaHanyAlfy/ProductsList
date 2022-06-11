@@ -10,10 +10,12 @@ import Foundation
 
 // MARK: - Product
 struct Product: Codable {
-    let id: Int?
-    let productDescription: String?
-    let image: Image?
-    let price: Int?
+    var id: Int?
+    var productDescription: String?
+    var image: Image?
+    var price: Int?
+    
+
 }
 
 // MARK: Product convenience initializers and mutators
@@ -59,8 +61,8 @@ extension Product {
 
 // MARK: - Image
 struct Image: Codable {
-    let width, height: Int?
-    let url: String?
+    var width, height: Int?
+    var url: String?
 }
 
 // MARK: Image convenience initializers and mutators

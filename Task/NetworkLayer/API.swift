@@ -13,7 +13,7 @@ enum API{
 
 extension API: EndPoint{
     var baseURL: String {
-        return "http://myjson.dit.upm.es"
+        return "https://myjson.dit.upm.es"
     }
     var urlSubFolder: String {
         return "/api"
@@ -41,7 +41,7 @@ extension API: EndPoint{
     var path: String {
         switch self {
         case .getDefault:
-            return "bins/9cmx"
+            return "bins/6va9"
         }
     }
     

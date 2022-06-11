@@ -31,9 +31,11 @@ public class ProductViewController: UIViewController,ProductView {
             
         }
         viewModel.productsResult()
+//        CoreDataMana
+        print(CoreDataManager.shared.getProducts())
+        
+       
     }
-
-   
 }
 extension ProductViewController: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,11 +85,10 @@ extension ProductViewController: ProductLayoutDelegate {
   func collectionView(
       _ collectionView: UICollectionView,
       heightForContentAtIndexPath indexPath:IndexPath) -> CGFloat {
-          var heightLabel = 0.0
           let heightImage = data?[indexPath.row].image?.height ?? 0
           guard let string = data?[indexPath.row].productDescription else {return 0}
-          heightLabel = UILabel.textHeight(withWidth: 150, font: UIFont.systemFont(ofSize: 17), text:  string)
-        
+          
+          let heightLabel = UILabel.textHeight(withWidth: 150, font: UIFont.systemFont(ofSize: 17), text:  string)
           let heightPrice = 24
           let heightSpaces = 22
           let heightMarginSpace = 8

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ImageCD" representedClassName="ImageCD" syncable="YES" codeGenerationType="class"/>
-    <entity name="ProductCD" representedClassName="ProductCD" syncable="YES" codeGenerationType="class"/>
+    <entity name="ImageCD" representedClassName=".ImageCD" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="width" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="ProductCD" representedClassName=".ProductCD" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageCD"/>
+    </entity>
     <elements>
-        <element name="ProductCD" positionX="-63" positionY="-18" width="128" height="29"/>
-        <element name="ImageCD" positionX="-54" positionY="9" width="128" height="29"/>
+        <element name="ImageCD" positionX="-54" positionY="9" width="128" height="88"/>
+        <element name="ProductCD" positionX="-257.1640014648438" positionY="81.91177368164062" width="128" height="103"/>
     </elements>
 </model>
