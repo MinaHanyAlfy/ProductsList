@@ -31,7 +31,7 @@ class ProductLayout: UICollectionViewLayout {
     }
     override func prepare() {
         guard
-        cache.isEmpty,
+            cache.isEmpty || cache.isEmpty == false,
         let collectionView = collectionView
         else {
           return

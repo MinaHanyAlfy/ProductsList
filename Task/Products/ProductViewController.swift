@@ -22,7 +22,8 @@ public class ProductViewController: UIViewController,ProductView {
     private var data: Products?{
         didSet{
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        self.collectionView.reloadData()
+
             }
         }
     }
@@ -40,26 +41,40 @@ public class ProductViewController: UIViewController,ProductView {
           layout.delegate = self
             
         }
-       
         checkConnection()
-      
-        
-       
+ 
     }
 }
+
 extension ProductViewController: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
-        cell.handleCell(product: (data?[indexPath.row])!)
+        guard let product = data?[indexPath.row] else{ return UICollectionViewCell()}
+        cell.handleCell(product: product )
         cell.widthCells = (collectionView.width-36) / 2.0
         return cell
     }
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data?.count ?? 0
     }
+    
+    //For sending product details.
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "productDesciption", sender: indexPath.row)
     }
+    
+    //Handling get more products.
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let products = data else{return}
+        if indexPath.row == products.count - 1{
+            moreProducts()
+        }
+    }
+    
     
 }
 
@@ -80,9 +95,12 @@ extension ProductViewController{
     }
     
     func ProductsSuccess(products: Products) {
-        self.data = products
+       
         DispatchQueue.main.async {
+            self.data = products
             self.collectionView.reloadData()
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.layoutSubviews()
             self.collectionView.layoutIfNeeded()
         }
         
@@ -110,15 +128,17 @@ extension ProductViewController{
     private func noProductsViewLayout(){
         DispatchQueue.main.async {[self] in
             collectionView.isHidden = true
-            var noProudctView = ZeroStateView(frame: CGRect(x: 0, y: 0, width: view.width/2, height: view.width/2))
+            let noProudctView = ZeroStateView(frame: CGRect(x: 0, y: 0, width: view.width/2, height: view.width/2))
             noProudctView.center = view.center
             view.addSubview(noProudctView)
         }
          
-     
+    }
+    
+    func moreProducts(){
+        viewModel.productsResult()
+    }
 
-       }
-  
 }
 extension ProductViewController: ProductLayoutDelegate {
   func collectionView(

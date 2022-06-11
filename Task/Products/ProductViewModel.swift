@@ -17,9 +17,10 @@ public class ProductViewModel: ProductViewModelProtocol {
         didSet{
             DispatchQueue.main.async {
                 CoreDataManager.shared.saveProducts(products: self.products ?? [])
+                self.view.ProductsSuccess(products: self.products ?? [])
             }
-            self.view.ProductsSuccess(products: products ?? [])
-        }
+            }
+           
     }
     weak private var view: ProductView!
     

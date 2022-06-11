@@ -41,7 +41,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productImageHeight.constant = height
         downloadImage(from: URL(string: product.image?.url ?? "https://www.dmplayhouse.com/wp-content/uploads/2019/12/13-512.png")!)
         
-        
     }
    
     private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
