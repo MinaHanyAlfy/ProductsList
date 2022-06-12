@@ -11,6 +11,10 @@
 		7FB5EBAB285556C40077683B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5EBAA285556C40077683B /* NetworkHandler.swift */; };
 		7FC593152852070D0044E24A /* ProductLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC593142852070D0044E24A /* ProductLayout.swift */; };
 		7FC59317285226390044E24A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC59316285226390044E24A /* UILabel+Extension.swift */; };
+		7FCB6B7B28561764007018B6 /* ImageCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB6B7728561764007018B6 /* ImageCD+CoreDataProperties.swift */; };
+		7FCB6B7C28561764007018B6 /* ProductCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB6B7828561764007018B6 /* ProductCD+CoreDataClass.swift */; };
+		7FCB6B7D28561764007018B6 /* ProductCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB6B7928561764007018B6 /* ProductCD+CoreDataProperties.swift */; };
+		7FCB6B7E28561764007018B6 /* ImageCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB6B7A28561764007018B6 /* ImageCD+CoreDataClass.swift */; };
 		7FF2240228508C49004808FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240128508C49004808FA /* AppDelegate.swift */; };
 		7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2240328508C49004808FA /* SceneDelegate.swift */; };
 		7FF2240928508C49004808FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2240728508C49004808FA /* Main.storyboard */; };
@@ -32,10 +36,6 @@
 		7FF2244B2850AC4E004808FA /* ZeroStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2244A2850AC4E004808FA /* ZeroStateView.swift */; };
 		7FF224512850B300004808FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF224502850B300004808FA /* UIView+Extensions.swift */; };
 		7FF224562850D465004808FA /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF224552850D465004808FA /* UIImage+Extension.swift */; };
-		7FF904D9285384D7007A576A /* ImageCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D5285384D7007A576A /* ImageCD+CoreDataClass.swift */; };
-		7FF904DA285384D7007A576A /* ImageCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D6285384D7007A576A /* ImageCD+CoreDataProperties.swift */; };
-		7FF904DB285384D7007A576A /* ProductCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D7285384D7007A576A /* ProductCD+CoreDataClass.swift */; };
-		7FF904DC285384D7007A576A /* ProductCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904D8285384D7007A576A /* ProductCD+CoreDataProperties.swift */; };
 		7FF904E028538566007A576A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF904DF28538566007A576A /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +61,10 @@
 		7FB5EBAA285556C40077683B /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		7FC593142852070D0044E24A /* ProductLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLayout.swift; sourceTree = "<group>"; };
 		7FC59316285226390044E24A /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		7FCB6B7728561764007018B6 /* ImageCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7FCB6B7828561764007018B6 /* ProductCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7FCB6B7928561764007018B6 /* ProductCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7FCB6B7A28561764007018B6 /* ImageCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7FF223FE28508C49004808FA /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF2240128508C49004808FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF2240328508C49004808FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,10 +90,6 @@
 		7FF2244A2850AC4E004808FA /* ZeroStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroStateView.swift; sourceTree = "<group>"; };
 		7FF224502850B300004808FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7FF224552850D465004808FA /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		7FF904D5285384D7007A576A /* ImageCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ImageCD+CoreDataClass.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ImageCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		7FF904D6285384D7007A576A /* ImageCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ImageCD+CoreDataProperties.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ImageCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		7FF904D7285384D7007A576A /* ProductCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductCD+CoreDataClass.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ProductCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		7FF904D8285384D7007A576A /* ProductCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductCD+CoreDataProperties.swift"; path = "Task/ProductDetails/CoreDataLayer/Modules/ProductCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		7FF904DF28538566007A576A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,10 +294,10 @@
 		7FF904DD28538549007A576A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				7FF904D5285384D7007A576A /* ImageCD+CoreDataClass.swift */,
-				7FF904D6285384D7007A576A /* ImageCD+CoreDataProperties.swift */,
-				7FF904D7285384D7007A576A /* ProductCD+CoreDataClass.swift */,
-				7FF904D8285384D7007A576A /* ProductCD+CoreDataProperties.swift */,
+				7FCB6B7A28561764007018B6 /* ImageCD+CoreDataClass.swift */,
+				7FCB6B7728561764007018B6 /* ImageCD+CoreDataProperties.swift */,
+				7FCB6B7828561764007018B6 /* ProductCD+CoreDataClass.swift */,
+				7FCB6B7928561764007018B6 /* ProductCD+CoreDataProperties.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -438,22 +438,22 @@
 				7FF224512850B300004808FA /* UIView+Extensions.swift in Sources */,
 				7FF2244B2850AC4E004808FA /* ZeroStateView.swift in Sources */,
 				7FF224422850956F004808FA /* API.swift in Sources */,
-				7FF904DA285384D7007A576A /* ImageCD+CoreDataProperties.swift in Sources */,
 				7FF904E028538566007A576A /* CoreDataManager.swift in Sources */,
-				7FF904DB285384D7007A576A /* ProductCD+CoreDataClass.swift in Sources */,
+				7FCB6B7E28561764007018B6 /* ImageCD+CoreDataClass.swift in Sources */,
 				7FB5EBAB285556C40077683B /* NetworkHandler.swift in Sources */,
+				7FCB6B7B28561764007018B6 /* ImageCD+CoreDataProperties.swift in Sources */,
 				7FAF74CA285357EA0006B489 /* ProductDetailsViewController.swift in Sources */,
 				7FF2240C28508C49004808FA /* Task.xcdatamodeld in Sources */,
 				7FF2244628509939004808FA /* ProductCollectionViewCell.swift in Sources */,
+				7FCB6B7C28561764007018B6 /* ProductCD+CoreDataClass.swift in Sources */,
 				7FC593152852070D0044E24A /* ProductLayout.swift in Sources */,
+				7FCB6B7D28561764007018B6 /* ProductCD+CoreDataProperties.swift in Sources */,
 				7FF2244028509564004808FA /* ErrorMessage.swift in Sources */,
 				7FF2243C2850954C004808FA /* EndPoint.swift in Sources */,
 				7FF2243828509186004808FA /* ProductViewModel.swift in Sources */,
-				7FF904D9285384D7007A576A /* ImageCD+CoreDataClass.swift in Sources */,
 				7FF2243A285091AA004808FA /* ProductViewController.swift in Sources */,
 				7FF2243E2850955A004808FA /* Network.swift in Sources */,
 				7FF2240228508C49004808FA /* AppDelegate.swift in Sources */,
-				7FF904DC285384D7007A576A /* ProductCD+CoreDataProperties.swift in Sources */,
 				7FF224562850D465004808FA /* UIImage+Extension.swift in Sources */,
 				7FF2240428508C49004808FA /* SceneDelegate.swift in Sources */,
 				7FF2243628509176004808FA /* ProductModel.swift in Sources */,

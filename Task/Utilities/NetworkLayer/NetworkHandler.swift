@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Network
 class NetworkHandler {
 
     static let shared: NetworkHandler = NetworkHandler()
